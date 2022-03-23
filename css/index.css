@@ -60,7 +60,7 @@
 .page {
     display: flex;
     flex-direction: column;
-    padding-top: 90px;
+    padding: 90px 0px;
     height: 100vh;
 }
 
@@ -149,6 +149,12 @@ p {
     box-shadow: 0px 4px 114px rgba(0, 0, 0, 0.09);
     height: 200px;
     z-index: 1000;
+    padding: 20px 35px;
+}
+
+.filter-box p {
+    color: var(--app-theme-color);
+    margin: 10px 0px;
 }
 
 .filter-area {
@@ -171,4 +177,30 @@ p {
     display: inline;
     margin: 0px 6px;
     cursor: pointer;
+}
+
+.select-theme-2 {
+    border: solid 2px var(--app-theme-color);
+    padding: 0px 20px 0px 0px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.select-theme-2 select {
+    width: 100%;
+}
+
+.footer {
+    display: flex;
+    padding: 20px 10%;
+    background-color: var(--app-theme-color);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    justify-content: center;
+}
+
+.footer p {
+    font-size: 18px;
 }
