@@ -1,6 +1,7 @@
 @import url(./mobile-only.css);
 @import url(./pc-only.css);
 @import url(./elevation.css);
+@import url(./anime.css);
 @import url("https://fonts.googleapis.com/css?family=Google+Sans:200,300,400,400i,500,600,700,900");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,500,600,700");
@@ -13,10 +14,10 @@
 }
 
 :root {
-    --app-theme-light: #FFEBDD;
-    --app-theme-color: #B0510C;
+    --app-theme-light: #ffebdd;
+    --app-theme-color: #b0510c;
     --app-overlay-tone: #fc7310;
-    --app-theme-light-tone-2: #FFCBA5;
+    --app-theme-light-tone-2: #ffcba5;
 }
 
 .nav-container {
@@ -84,7 +85,7 @@
     z-index: 3;
     height: 100%;
     width: 100%;
-    opacity: .5;
+    opacity: 0.5;
     background: var(--app-overlay-tone);
 }
 
@@ -118,8 +119,8 @@ p {
 }
 
 .touchable-opacity:hover {
-    opacity: .5;
-    transition: .3s ease-out;
+    opacity: 0.5;
+    transition: 0.3s ease-out;
 }
 
 .filter-box {
@@ -182,4 +183,16 @@ p {
 
 .app-logo img {
     object-fit: cover;
+}
+
+.blanket {
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    height: 6%;
+    background: #fff7f2;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
