@@ -12,6 +12,39 @@
 
 <body>
     <nav-bar opened="false" id="nav"></nav-bar>
+    <div class="page" style="
+        align-items: center;
+        justify-content: center;
+        background-color: #fff8f3;
+      ">
+        <br class="pc-vanish" />
+        <br class="pc-vanish" />
+        <div>
+            <h1 class="page-title">Send Us A Message</h1>
+        </div>
+        <br class="phone-vanish" />
+        <br />
+        <form class="form elevate-hover">
+            <h2 style="color: var(--app-theme-color); font-weight: 300">
+                Please use the form below to send us a message
+            </h2>
+            <br />
+            <label>Email</label>
+            <input type="text" required class="textbox" placeholder="Enter your email..." />
+            <br />
+            <label>Subject</label>
+            <input type="text" required class="textbox" placeholder="Enter a subject..." />
+            <br />
+            <label>Message</label>
+            <textarea type="text" required class="textbox" placeholder="Enter your message" rows="8"></textarea>
+            <div class="flex" style="padding: 10px">
+                <button class="custom-btn touchable-opacity" style="margin-left: auto; background-color: green; color: white">
+            Send Message
+          </button>
+            </div>
+        </form>
+    </div>
+    <app-footer></app-footer>
 </body>
 
 </html>

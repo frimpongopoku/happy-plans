@@ -60,4 +60,21 @@
     .footer .email {
         margin: 0px 20px;
     }
+    .form {
+        padding: 25px;
+        height: 100%;
+        width: 100%;
+    }
+    .textbox {
+        padding: 15px;
+    }
+    .custom-btn {
+        padding: 10px 15px;
+    }
+    .page-title {
+        font-size: 1.3rem;
+    }
+    .form h2 {
+        font-size: 1.1rem;
+    }
 }

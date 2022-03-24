@@ -196,3 +196,24 @@ p {
     align-items: center;
     justify-content: center;
 }
+
+.textbox {
+    border: solid 2px var(--app-theme-color);
+    width: 100%;
+    display: block;
+    margin: 6px 0px;
+}
+
+.textbox:active,
+.textbox:focus,
+.custom-btn:active,
+.custom-btn:focus {
+    outline: 0;
+}
+
+.custom-btn {
+    font-weight: bold;
+    cursor: pointer;
+    border: 0px;
+    border-radius: 3px;
+}

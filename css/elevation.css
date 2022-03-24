@@ -8,6 +8,12 @@
     --elevate-4: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
     --elevate-5: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
     --elevate-float-2: 0px 4px 42px -12px rgba(0, 0, 0, 0.09);
+    --elevate-hover: 0px 4px 114px rgba(0, 0, 0, 0.09);
+}
+
+.elevate-hover {
+    box-shadow: var(--elevate-hover);
+    -webkit-box-shadow: var(--elevate-hover);
 }
 
 .elevate-float {
