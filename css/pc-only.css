@@ -77,4 +77,19 @@
     .page-title {
         font-size: 3.2rem;
     }
+    .l-title {
+        font-size: 5.2rem;
+    }
+    .l-filter-edits {
+        margin-top: 15px;
+        width: 50%;
+        border-radius: 10px !important;
+    }
+    .l-filter-edits h2 {
+        color: var(--app-theme-color);
+    }
+    .l-subtext {
+        font-size: 23px;
+        text-align: center;
+    }
 }

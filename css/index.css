@@ -13,6 +13,11 @@
     margin: 0px;
 }
 
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
 :root {
     --app-theme-light: #ffebdd;
     --app-theme-color: #b0510c;
@@ -216,4 +221,45 @@ p {
     cursor: pointer;
     border: 0px;
     border-radius: 3px;
+}
+
+.root {
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.l-back {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.landing-overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--app-theme-color);
+    opacity: .6;
+    z-index: 10;
+}
+
+.l-content-container {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+}
+
+.l-title {
+    text-align: center;
 }

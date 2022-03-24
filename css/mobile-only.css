@@ -77,4 +77,18 @@
     .form h2 {
         font-size: 1.1rem;
     }
+    .l-title {
+        font-size: 2.2rem;
+    }
+    .l-filter-edits {
+        width: 90%;
+        border-radius: 10px !important;
+    }
+    .l-filter-edits h2 {
+        font-size: 16px
+    }
+    .l-subtext {
+        font-size: 14px;
+        text-align: center;
+    }
 }
