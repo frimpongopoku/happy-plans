@@ -1,0 +1,20 @@
+@media only screen and (max-width: 767px) {
+    .nav-container {
+        padding: 10px 20px;
+    }
+    .custom-select select {
+        font-size: 13px;
+        padding: 10px;
+    }
+    .app-logo img {
+        height: 40px;
+        width: 70px;
+        margin-bottom: -10px;
+    }
+    .menu li {
+        font-size: 12px;
+    }
+    .phone-vanish {
+        display: none !important;
+    }
+}

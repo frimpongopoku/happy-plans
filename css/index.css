@@ -21,7 +21,6 @@
 
 .nav-container {
     width: 100%;
-    padding: 10px 40px;
     display: flex;
     flex-direction: row;
     background: var(--app-theme-light);
@@ -46,8 +45,6 @@
     background-color: transparent;
     outline: 0px;
     border: 0px;
-    font-size: 18px;
-    padding: 15px;
     font-weight: bold;
     text-align: center;
     color: var(--app-theme-color);
@@ -175,7 +172,6 @@ p {
 .menu li {
     list-style: none;
     display: inline;
-    margin: 0px 6px;
     cursor: pointer;
 }
 
@@ -203,4 +199,12 @@ p {
 
 .footer p {
     font-size: 18px;
+}
+
+.app-logo {
+    text-decoration: none;
+}
+
+.app-logo img {
+    object-fit: cover;
 }
