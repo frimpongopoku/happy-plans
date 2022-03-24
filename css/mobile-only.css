@@ -17,4 +17,46 @@
     .phone-vanish {
         display: none !important;
     }
+    .hero {
+        width: 100%;
+        height: 33%;
+    }
+    .page {
+        padding: 50px 0px;
+    }
+    .hero-body {
+        padding: 20px;
+    }
+    .hero-body h1 {
+        font-size: 33px;
+        font-weight: 500;
+    }
+    .hero-body p {
+        font-size: 16px;
+    }
+    .hero-button {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+    .filter-area {
+        padding: 0px 5%;
+    }
+    .filter-box {
+        padding: 20px 25px;
+    }
+    .filter-box p {
+        font-size: 14px;
+    }
+    .filter-box h3 {
+        font-size: 15px;
+    }
+    .footer {
+        padding: 15px 20px;
+    }
+    .footer p {
+        font-size: 13px;
+    }
+    .footer .email {
+        margin: 0px 20px;
+    }
 }

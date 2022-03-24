@@ -17,4 +17,46 @@
     .pc-vanish {
         display: none !important;
     }
+    .hero {
+        width: 90%;
+        height: 60%;
+    }
+    .page {
+        padding: 90px 0px;
+    }
+    .hero-image {
+        border-radius: 20px;
+    }
+    .hero-overlay {
+        border-radius: 20px;
+    }
+    .hero-body {
+        padding: 40px 60px;
+    }
+    .hero-body h1 {
+        font-size: 92px;
+        font-weight: 500;
+    }
+    .hero-body p {
+        font-size: 24px;
+    }
+    .hero-button {
+        padding: 15px 60px;
+        font-size: 18px;
+    }
+    .filter-area {
+        padding: 0px 15%;
+    }
+    .filter-box {
+        padding: 20px 35px;
+    }
+    .footer {
+        padding: 20px 10%;
+    }
+    .footer p {
+        font-size: 18px;
+    }
+    .footer .email {
+        margin: 0px 60px;
+    }
 }
