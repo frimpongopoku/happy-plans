@@ -25,3 +25,14 @@ export const getPageNameFromURL = (url) => {
     return last.split(".")[0] // last item split with "." because like this ["some-other-page", "html"]
         //so the first time represents the name of the page
 };
+
+
+/**
+ * Capitalises a given word
+ * @param {*} word 
+ */
+export const capitalise = (word) => {
+    if (!word) return "";
+    const first = word.charAt(0).toUpperCase();
+    return first + word.slice(1);
+}

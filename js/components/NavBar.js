@@ -1,5 +1,5 @@
 import { getElement } from "../utils/utils.js";
-import { PAGES } from "./data.js";
+import { COUNTRIES, PAGES } from "./data.js";
 const navigate = (page) => {
     const url = PAGES[page].url;
     window.page = PAGES[page];
@@ -54,34 +54,29 @@ export default class NavBarComponent extends HTMLElement {
         <ul class="menu">
           ${items.join("")}
         </ul>`;
-
+        const countries = Object.keys(COUNTRIES).map((key) => key).join(",")
         const content = `
-    <nav class="nav-container elevate-float">
-      <div class ="blanket fade-in" style="display:${
-        showBlanket ? "flex" : "none"
-      }">
-        ${navMenuItems}
-      </div>
-      <div class="flex">
-        <a class="app-logo" href="#"><img src="./../../shared/media//hp-logo.png" alt="site-logo" /></a>
-        <div class="custom-select" style="margin-left:15px">
-          <select>
-            <option>Mauritius</option>
-            <option>United Kingdom</option>
-            <option>Ghana</option>
-          </select>
-        </div>
-      </div>
-      <div class="nav-right">
-      <div class="phone-vanish">
-      ${navMenuItems}
-        
-      </div>
-        <div class="pc-vanish">
-          <em id="phone-bars" class="fa fa-bars touchable-opacity" style="color: var(--app-theme-color); font-size: 18px;"></em>
-        </div>
-      </div>
-    </nav>`;
+          <nav class="nav-container elevate-float">
+            <div class ="blanket fade-in" style="display:${
+              showBlanket ? "flex" : "none"
+            }">
+              ${navMenuItems}
+            </div>
+            <div class="flex">
+              <a class="app-logo" href="#"><img src="./../../shared/media//hp-logo.png" alt="site-logo" /></a>
+              <app-dropdown style="margin-left:15px" options=${countries.toUpperCase()}></app-dropdown>
+              </div>
+            </div>
+            <div class="nav-right">
+            <div class="phone-vanish">
+            ${navMenuItems}
+              
+            </div>
+              <div class="pc-vanish">
+                <em id="phone-bars" class="fa fa-bars touchable-opacity" style="color: var(--app-theme-color); font-size: 18px;"></em>
+              </div>
+            </div>
+          </nav>`;
 
         this.innerHTML = content;
         const navBarComponent = getElement("#nav");

@@ -1,4 +1,4 @@
-export class Hero extends HTMLElement {
+export default class Hero extends HTMLElement {
     constructor() {
         super();
         // Set default values of  the hero component before the real attributes load

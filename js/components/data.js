@@ -1,3 +1,11 @@
+import { capitalise } from "../utils/utils.js";
+
+export const COUNTRIES = {
+    mauritius: { name: "mauritius", key: "mauritius" },
+    ghana: { key: "ghana", name: "ghana" },
+    uk: { key: "uk", name: "United Kingdom" },
+};
+
 export const PAGES = {
     home: { url: "/index.html", name: "home" },
     education: {
@@ -6,6 +14,7 @@ export const PAGES = {
         filter: {
             description: "The list below provides information on top universities within your specified country in the order chosen on the dropdown below",
             subtext: "Sort by",
+            options: "Rank, Date of Establishment, Student Population"
         },
     },
     travel: {
@@ -14,6 +23,7 @@ export const PAGES = {
         filter: {
             description: "For all you travellers, here are some important information on crucial prices in the available countries on the platform",
             subtext: "Select Category",
+            options: "Gas Prices, Cost of Living, Hotels"
         },
     },
     health: {
@@ -22,13 +32,8 @@ export const PAGES = {
         filter: {
             description: "We provide available statistics on COVID-19 activities in various countries",
             subtext: "Compare to",
+            options: Object.keys(COUNTRIES).map(name => capitalise(name)).join(",")
         },
     },
     contact: { url: "/pages/forms/contact.html", name: "contact" },
-};
-
-export const COUNTRIES = {
-    mauritius: { name: "mauritius", key: "mauritius" },
-    ghana: { key: "ghana", name: "ghana" },
-    uk: { key: "uk", name: "United Kingdom" },
 };
