@@ -6,6 +6,7 @@ export const COUNTRIES = {
     uk: { key: "uk", name: "United Kingdom" },
 };
 
+const getLabel = (op) => op.name;
 export const PAGES = {
     home: { url: "/index.html", name: "home" },
     education: {
@@ -14,7 +15,8 @@ export const PAGES = {
         filter: {
             description: "The list below provides information on top universities within your specified country in the order chosen on the dropdown below",
             subtext: "Sort by",
-            options: "Rank, Date of Establishment, Student Population"
+
+            options: "Ascending Order - asc, Descending Order - desc", // Format: (Name of dropdown item - key)
         },
     },
     travel: {
@@ -23,7 +25,7 @@ export const PAGES = {
         filter: {
             description: "For all you travellers, here are some important information on crucial prices in the available countries on the platform",
             subtext: "Select Category",
-            options: "Gas Prices, Cost of Living, Hotels"
+            options: "Hotels - hot ,Weather - wea",
         },
     },
     health: {
@@ -32,7 +34,9 @@ export const PAGES = {
         filter: {
             description: "We provide available statistics on COVID-19 activities in various countries",
             subtext: "Compare to",
-            options: Object.keys(COUNTRIES).map(name => capitalise(name)).join(",")
+            options: Object.keys(COUNTRIES)
+                .map((name, val) => capitalise(name) + "-" + val.key)
+                .join(","),
         },
     },
     contact: { url: "/pages/forms/contact.html", name: "contact" },

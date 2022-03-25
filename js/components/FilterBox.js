@@ -1,6 +1,7 @@
 export default class FilterBox extends HTMLElement {
     constructor() {
         super();
+        // get the name of the page, and information of the current page from window to be passed on for render
         const info = window.pageInfo;
         this.pagename = window.pageName && window.pageName.toUpperCase();
         this.info = info || {};
@@ -16,7 +17,7 @@ export default class FilterBox extends HTMLElement {
                  ${(filter && filter.description) || "..."}
               </p>
               <h3>${(filter && filter.subtext) || "..."}</h3>
-            <app-dropdown version ="v2" options = "${filter.options }"></app-dropdown>
+            <app-dropdown version ="v2" options = "${filter && filter.options }"></app-dropdown>
           </div>
       </div>
 `;
