@@ -2,6 +2,7 @@ import { getElement } from "../utils/utils.js";
 import { PAGES } from "./data.js";
 const navigate = (page) => {
     const url = PAGES[page].url;
+    window.page = PAGES[page];
     if (!url) return;
     window.location = url;
 };

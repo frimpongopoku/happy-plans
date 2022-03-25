@@ -19,7 +19,10 @@
     }
     .hero {
         width: 90%;
-        height: 60%;
+        height: 100%;
+    }
+    app-hero {
+        height: 60%
     }
     .page {
         padding: 90px 0px;
@@ -32,6 +35,7 @@
     }
     .hero-body {
         padding: 40px 60px;
+        align-items: center;
     }
     .hero-body h1 {
         font-size: 92px;
