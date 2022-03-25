@@ -92,4 +92,18 @@
         font-size: 23px;
         text-align: center;
     }
+    .chart-area {
+        margin: 0px 10%;
+        margin-top: 160px;
+    }
+    .chart-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .chart-container div {
+        width: 30vw;
+        height: 30vw;
+        margin-left: 30px;
+    }
 }

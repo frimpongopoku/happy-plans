@@ -1,12 +1,23 @@
 import { getElement } from "../utils/utils.js";
+import { PAGES } from "./data.js";
+const navigate = (page) => {
+    const url = PAGES[page].url;
+    if (!url) return;
+    window.location = url;
+};
 
+/**
+ * A dynamic re-usable navbar component
+ */
 export default class NavBarComponent extends HTMLElement {
     constructor() {
         super();
+        this.id = "nav";
     }
 
     connectedCallback() {
         this.render({ opened: "false" });
+        this.initialiseMenus();
     }
     static get observedAttributes() {
         return ["opened"];
@@ -19,20 +30,28 @@ export default class NavBarComponent extends HTMLElement {
         });
     }
 
+    initialiseMenus() {
+        const menuItems = getElement(".nav-menu-item", true);
+        menuItems.forEach((m) => {
+            const key = m.getAttribute("data-key");
+            m.addEventListener("click", function() {
+                navigate(key);
+            });
+        });
+    }
+
+
     render({ opened }) {
         const showBlanket = opened === "true";
+        const items = Object.keys(PAGES).map((pageName) => {
+            return `<li class="nav-menu-item touchable-opacity" data-key="${pageName}">
+           ${pageName}
+        </li>`;
+        });
 
         var navMenuItems = ` 
         <ul class="menu">
-          <li class="nav-menu-item touchable-opacity">
-            Home
-          </li>
-          <li class="nav-menu-item touchable-opacity">
-            Contact Us
-          </li>
-          <li class="nav-menu-item touchable-opacity">
-            Subscribe
-          </li>
+          ${items.join("")}
         </ul>`;
 
         const content = `
@@ -66,7 +85,7 @@ export default class NavBarComponent extends HTMLElement {
         this.innerHTML = content;
         const navBarComponent = getElement("#nav");
         const phoneBarsToggle = getElement("#phone-bars");
-        phoneBarsToggle.addEventListener("click", () => {
+        phoneBarsToggle.addEventListener("click", function() {
             const value = navBarComponent.getAttribute("opened");
             navBarComponent.setAttribute(
                 "opened",

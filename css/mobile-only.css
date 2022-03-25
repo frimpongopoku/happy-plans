@@ -91,4 +91,8 @@
         font-size: 14px;
         text-align: center;
     }
+    .chart-area {
+        margin: 0px 3%;
+        margin-top: 130px;
+    }
 }

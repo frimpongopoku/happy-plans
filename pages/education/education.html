@@ -6,34 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./../../css/index.css" />
+    <script src="./../../js/index.js" type="module"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>Education Page</title>
 </head>
 
 <body>
     <div class="page">
-        <nav class="nav-container elevate-float">
-            <div class="flex">
-                <a class="app-logo" href="#"><img src="./../../shared/media//hp-logo.png" alt="site-logo" /></a>
-                <div class="custom-select" style="margin-left: 15px">
-                    <select>
-              <option>Mauritius</option>
-              <option>United Kingdom</option>
-              <option>Ghana</option>
-            </select>
-                </div>
-            </div>
-            <div class="nav-right">
-                <ul class="menu phone-vanish">
-                    <li class="nav-menu-item touchable-opacity">Home</li>
-                    <li class="nav-menu-item touchable-opacity">Contact Us</li>
-                    <li class="nav-menu-item touchable-opacity">Subscribe</li>
-                </ul>
-                <div class="pc-vanish">
-                    <em class="fa fa-bars touchable-opacity" style="color: var(--app-theme-color); font-size: 18px"></em>
-                </div>
-            </div>
-        </nav>
+        <nav-bar></nav-bar>
         <div class="hero">
             <div class="content">
                 <img class="hero-image" src="./../../shared/media/uk-hero-back.jpeg" alt="hero image" />
@@ -56,23 +36,19 @@
                         Here is a list of universities available in the
                         <b>United Kingdom</b> arranged in order of ranking
                     </p>
-                    <h3>Compare to</h3>
+                    <h3>Sort by</h3>
                     <div class="custom-select select-theme-2">
                         <select style="text-align: left">
-                <option>Mauritius</option>
-                <option>United Kingdom</option>
-                <option>Ghana</option>
+                <option>Ranking</option>
+                <option>Date of Establishment</option>
+                <option>Student Population</option>
               </select>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <section class="footer">
-        <p><strong>Call Us On: +230 5733 9143</strong></p>
-        <p class="email"><strong>message@happy-plans.com</strong></p>
-        <p><strong>Happy-plans@2022</strong></p>
-    </section>
+    <app-footer></app-footer>
 </body>
 
 </html>

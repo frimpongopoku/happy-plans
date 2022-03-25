@@ -175,7 +175,7 @@ p {
 .footer {
     display: flex;
     background-color: var(--app-theme-color);
-    position: fixed;
+    /* position: fixed; */
     bottom: 0px;
     left: 0px;
     width: 100%;
@@ -192,7 +192,7 @@ p {
 
 .blanket {
     position: fixed;
-    top: 60px;
+    top: 58px;
     left: 0px;
     height: 6%;
     background: #fff7f2;
@@ -200,6 +200,9 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
+    padding: 0px 10%;
+    text-align: center;
 }
 
 .textbox {
@@ -262,4 +265,8 @@ p {
 
 .l-title {
     text-align: center;
+}
+
+.chart-area {
+    margin-bottom: 10%;
 }
