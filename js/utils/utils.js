@@ -14,25 +14,58 @@ export const getElement = (selector, all = false) => {
 };
 
 /**
- * Deconstructs a URL and retrieves the name of the page 
+ * Deconstructs a URL and retrieves the name of the page
  * using the name of the html file
- * @param {*} url 
- * @returns 
+ * @param {*} url
+ * @returns
  */
 export const getPageNameFromURL = (url) => {
     url = url.split("/"); // some-url.com/page/some-other-page.html, will become an array ["some-url.com", "page", "some-other-page.html"]
-    var last = url[url.length - 1] || "" // now access last item in array
-    return last.split(".")[0] // last item split with "." because like this ["some-other-page", "html"]
-        //so the first time represents the name of the page
+    var last = url[url.length - 1] || ""; // now access last item in array
+    return last.split(".")[0]; // last item split with "." because like this ["some-other-page", "html"]
+    //so the first time represents the name of the page
 };
-
 
 /**
  * Capitalises a given word
- * @param {*} word 
+ * @param {*} word
  */
 export const capitalise = (word) => {
     if (!word) return "";
     const first = word.charAt(0).toUpperCase();
     return first + word.slice(1);
+};
+
+export class InternetExplorer {
+    // constructor({data, method, headers})
+    // {
+    //     const _headers = {
+    //         "Content-Type": "application/json"
+    //     }
+    //     this.data = data;
+    //     this.method = method || "GET";
+    //     this.headers = headers || _headers ;
+    // }
+
+    static fetch({ method, url, headers }) {
+        headers = headers || { "Content-Type": "application/json" };
+        try {
+            return fetch(url, { method, headers }).then((response) =>
+                response.json()
+            );
+        } catch (e) {
+            console.log(
+                "Sorry, something happened where we were getting data from " + url,
+                e.toString()
+            );
+        }
+    }
+
+    static get(obj) {
+        return InternetExplorer.fetch({...obj, method: "GET" });
+    }
+
+    static post(obj) {
+        return InternetExplorer.fetch({...obj, method: "POST" });
+    }
 }

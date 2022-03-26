@@ -123,7 +123,7 @@
     }
     .lean-card .right {
         height: 100%;
-        background: #01AD6F;
+        background: #01ad6f;
         padding: 30px 60px;
         cursor: pointer;
     }
@@ -137,5 +137,11 @@
         width: 150px;
         object-fit: contain;
         margin-right: 20px;
+    }
+    .loader em {
+        font-size: 60px;
+    }
+    .space {
+        margin-top: 15vh;
     }
 }

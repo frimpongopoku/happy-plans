@@ -117,4 +117,10 @@
         font-size: 50px !important;
         color: white;
     }
+    .loader em {
+        font-size: 30px;
+    }
+    .space {
+        margin-top: 35vh;
+    }
 }
