@@ -67,7 +67,7 @@ export default class NavBarComponent extends HTMLElement {
             </div>
             <div class="flex">
               <a class="app-logo" href="#"><img src="./../../shared/media//hp-logo.png" alt="site-logo" /></a>
-              <app-dropdown style="margin-left:15px" options=${countries.toUpperCase()} identifier ="navigation"></app-dropdown>
+              <app-dropdown style="margin-left:15px" options=${countries.toUpperCase()} identifier ="navigation" id="navigation-dropdown"></app-dropdown>
               </div>
             </div>
             <div class="nav-right">

@@ -1,5 +1,5 @@
 import { COUNTRIES, PAGES } from "./components/data.js";
-import { getElement, InternetExplorer } from "./utils/utils.js";
+import { capitalise, getElement, InternetExplorer } from "./utils/utils.js";
 
 /**
  * Every dropdown item fires this function on click
@@ -55,7 +55,8 @@ export const makeUniversities = (data) => {
  */
 export const mountEducationPage = () => {
     const title = getElement("#education-page-description");
-    title.innerHTML = "List of some universities in " + window.country.name;
+    title.innerHTML =
+        "List of some universities in " + capitalise(window.country.name);
 };
 
 /**
@@ -68,11 +69,9 @@ export const mountPage = (pageObj) => {
     if (mount) mount();
 };
 
-
 export const selectCountryOnNav = (countryKey) => {
     const country = COUNTRIES[countryKey.toLowerCase()];
-    var url = window.location.href.split("?")[0]
-    window.location.href = `${url}?country=${country.key}`
-    console.log("console.log I am the url my gee", url)
-
-}
+    var url = window.location.href.split("?")[0];
+    window.location.href = `${url}?country=${country.key}`;
+    console.log("console.log I am the url my gee", url);
+};
