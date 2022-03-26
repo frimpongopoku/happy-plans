@@ -17,7 +17,7 @@ export default class FilterBox extends HTMLElement {
                  ${(filter && filter.description) || "..."}
               </p>
               <h3>${(filter && filter.subtext) || "..."}</h3>
-            <app-dropdown version ="v2" options = "${filter && filter.options }"></app-dropdown>
+            <app-dropdown version ="v2" options = "${filter && filter.options }" identifier="filter"></app-dropdown>
           </div>
       </div>
 `;

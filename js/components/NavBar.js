@@ -24,8 +24,7 @@ export default class NavBarComponent extends HTMLElement {
         return ["opened"];
     }
 
-    attributeChangedCallback(name, oldValue, newValue) {
-        console.log(name, oldValue, newValue);
+    attributeChangedCallback(name, _, newValue) {
         this.render({
             [name]: newValue,
         });
@@ -54,7 +53,11 @@ export default class NavBarComponent extends HTMLElement {
         <ul class="menu">
           ${items.join("")}
         </ul>`;
-        const countries = Object.keys(COUNTRIES).map((key) => key).join(",")
+        const countries = Object.keys(COUNTRIES).map((countryName) => {
+            const value = COUNTRIES[countryName]
+            return countryName + "-" + value.key
+        }).join(",")
+
         const content = `
           <nav class="nav-container elevate-float">
             <div class ="blanket fade-in" style="display:${
@@ -64,7 +67,7 @@ export default class NavBarComponent extends HTMLElement {
             </div>
             <div class="flex">
               <a class="app-logo" href="#"><img src="./../../shared/media//hp-logo.png" alt="site-logo" /></a>
-              <app-dropdown style="margin-left:15px" options=${countries.toUpperCase()}></app-dropdown>
+              <app-dropdown style="margin-left:15px" options=${countries.toUpperCase()} identifier ="navigation"></app-dropdown>
               </div>
             </div>
             <div class="nav-right">
