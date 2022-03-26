@@ -131,4 +131,11 @@
         font-size: 90px !important;
         color: white;
     }
+    .lean-card .right-img {
+        margin-left: auto;
+        height: 100%;
+        width: 150px;
+        object-fit: contain;
+        margin-right: 20px;
+    }
 }
