@@ -22,7 +22,7 @@
         height: 100%;
     }
     app-hero {
-        height: 60%
+        height: 60%;
     }
     .page {
         padding: 90px 0px;
@@ -109,5 +109,26 @@
         width: 30vw;
         height: 30vw;
         margin-left: 30px;
+    }
+    .after-hero {
+        margin-top: 10%;
+        margin: 10% 15%;
+    }
+    .lean-card {
+        width: 100%;
+        border-radius: 5px;
+    }
+    .lean-card .left {
+        padding: 40px 35px;
+    }
+    .lean-card .right {
+        height: 100%;
+        background: #01AD6F;
+        padding: 30px 60px;
+        cursor: pointer;
+    }
+    .right-angle {
+        font-size: 90px !important;
+        color: white;
     }
 }

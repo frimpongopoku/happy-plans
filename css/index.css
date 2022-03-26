@@ -6,6 +6,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,500,600,700");
 @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 * {
     font-family: "Google Sans", sans-serif;
     box-sizing: border-box;
@@ -274,4 +275,27 @@ p {
 
 app-hero {
     position: relative;
+}
+
+.after-hero {
+    display: flex;
+    flex-direction: column;
+}
+
+.lean-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.after-hero .page-title {
+    text-align: center;
+}
+
+.lean-card .right {
+    margin-left: auto;
+}
+
+.lean-card {
+    margin: 10px;
 }

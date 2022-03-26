@@ -7,7 +7,6 @@ import { PAGES } from "./components/data.js";
  * @param {*} identifier unique string that is used to identify which part of the page object(data.js)  to find the particular function that needs to run
  */
 export const onDropdownClick = (data, identifier) => {
-    console.log("I am the identifier bro", identifier);
     const page = window.pageName;
     const dropdownInfo = PAGES[page] || {};
     const functionToRun = (dropdownInfo[identifier] || {}).runnable

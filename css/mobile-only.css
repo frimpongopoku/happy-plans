@@ -20,7 +20,7 @@
     }
     .hero {
         width: 100%;
-        height: 33%;
+        height: 103%;
     }
     .page {
         padding: 50px 0px;
@@ -94,5 +94,27 @@
     .chart-area {
         margin: 0px 3%;
         margin-top: 130px;
+    }
+    .after-hero {
+        margin-top: 30%;
+    }
+    .lean-card {
+        /* padding: 15px 20px; */
+    }
+    .lean-card .left {
+        padding: 20px;
+    }
+    .lean-card .left h1 {
+        font-size: 18px;
+    }
+    .lean-card .right {
+        height: 100%;
+        background: #01AD6F;
+        padding: 20px 30px;
+        cursor: pointer;
+    }
+    .right-angle {
+        font-size: 50px !important;
+        color: white;
     }
 }
