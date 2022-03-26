@@ -31,7 +31,7 @@ export const PAGES = {
         },
         filter: {
             runnable: arrangeInOrder,
-            description: "The list below provides information on top universities within your specified country in the order chosen on the dropdown below",
+            description: `The list below provides information on top universities within the country, in alphabetical order.`,
             subtext: "Sort by",
             options: "Ascending Order - asc, Descending Order - desc", // Format: (Name of dropdown item - key)
         },
