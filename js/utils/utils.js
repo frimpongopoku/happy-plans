@@ -37,15 +37,6 @@ export const capitalise = (word) => {
 };
 
 export class InternetExplorer {
-    // constructor({data, method, headers})
-    // {
-    //     const _headers = {
-    //         "Content-Type": "application/json"
-    //     }
-    //     this.data = data;
-    //     this.method = method || "GET";
-    //     this.headers = headers || _headers ;
-    // }
 
     static fetch({ method, url, headers }) {
         headers = headers || { "Content-Type": "application/json" };
@@ -68,4 +59,13 @@ export class InternetExplorer {
     static post(obj) {
         return InternetExplorer.fetch({...obj, method: "POST" });
     }
+}
+
+
+export const fetchParamsFromURL = (url, paramName) => {
+    if (!url) return "";
+    url = url.toLowerCase();
+    const _url = new URL(url);
+    return _url.searchParams.get(paramName)
+
 }

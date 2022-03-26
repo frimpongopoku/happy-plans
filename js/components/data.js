@@ -1,4 +1,9 @@
-import { arrangeInOrder, makeUniversities } from "../functions.js";
+import {
+    arrangeInOrder,
+    makeUniversities,
+    mountEducationPage,
+    selectCountryOnNav,
+} from "../functions.js";
 import { capitalise } from "../utils/utils.js";
 
 export const COUNTRIES = {
@@ -7,14 +12,17 @@ export const COUNTRIES = {
     uk: { key: "uk", name: "United Kingdom" },
 };
 
+const common = {
+    navigation: {
+        runnable: selectCountryOnNav,
+    },
+};
 export const PAGES = {
     home: { url: "/index.html", name: "home" },
     education: {
         url: "/pages/education/education.html",
         name: "education",
-        navigation: {
-            runnable: (data) => console.log("I am the navigation guy bro", data),
-        },
+        ...common,
         api: {
             universities: {
                 url: ({ country }) =>
@@ -30,9 +38,13 @@ export const PAGES = {
         recycler: {
             runnable: makeUniversities,
         },
+        mount: {
+            runnable: mountEducationPage,
+        },
     },
     travel: {
         url: "/pages/travel/travel.html",
+        ...common,
         name: "travel",
         filter: {
             description: "For all you travellers, here are some important information on crucial prices in the available countries on the platform",
@@ -42,6 +54,7 @@ export const PAGES = {
     },
     health: {
         url: "/pages/health/health.html",
+        ...common,
         name: "health",
         filter: {
             description: "We provide available statistics on COVID-19 activities in various countries",
