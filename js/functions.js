@@ -1,3 +1,4 @@
+import { generateBarGraphData, generatePieChartData } from "./components/chart/chart.js";
 import { COUNTRIES, PAGES } from "./components/data.js";
 import { capitalise, getElement, InternetExplorer } from "./utils/utils.js";
 
@@ -257,8 +258,38 @@ export const handleOnTravelDropdownChange = (key) => {
     }
 };
 
+const makeGraphsAndAttach = (info) => {
+    const recycler = getElement("#health-recycler");
+    const markup = `
+    <div class="chart-container">
+        <div style="margin-bottom: 60px">
+            <canvas id="pie-chart" width="400" height="400"></canvas>
+        </div>
 
+        <div><canvas id="bar-chart" width="400" height="400"></canvas></div>
+    </div>
+    `;
+
+    recycler.setAttribute("markup", markup);
+    recycler.setAttribute("loading", "false");
+    const pie = getElement("#pie-chart");
+    const bar = getElement("#bar-chart");
+    const response = info.response[0];
+    new Chart(pie, generatePieChartData(response));
+    new Chart(bar, generateBarGraphData(response));
+};
 export const loadHealthInformation = () => {
-
-
-}
+    const country = window.country || {};
+    const page = window.pageInfo;
+    const headers = {
+        "X-RapidAPI-Key": "7d4387e6d7msh5989ee4a8593cdbp154c63jsnea2eeba3f545",
+    };
+    const url = page.api.covid.url({
+        country: country.key,
+    });
+    InternetExplorer.get({ url, headers })
+        .then((covidInfo) => {
+            makeGraphsAndAttach(covidInfo);
+        })
+        .catch((e) => console.log("FETCH_ERROR:", e.toString()));
+};

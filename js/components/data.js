@@ -77,9 +77,16 @@ export const PAGES = {
         url: "/pages/health/health.html",
         ...common,
         name: "health",
+        api: {
+            covid: {
+                url: ({ country }) =>
+                    `https://covid-193.p.rapidapi.com/statistics?country=${country}`,
+            },
+        },
         filter: {
             description: "We provide available statistics on COVID-19 activities in various countries",
-            subtext: "Compare to",
+            subtext: "Always remember to wear your mask",
+            noDropdown: true,
             options: Object.keys(COUNTRIES)
                 .map((name, val) => capitalise(name) + "-" + val.key)
                 .join(","),
@@ -87,8 +94,7 @@ export const PAGES = {
         mount: {
             runnable: () => setPageDescription("Summary of COVID-19 Dynamics in "),
         },
-
-        recycler: { runnable: loadHealthInformation }
+        recycler: { runnable: loadHealthInformation },
     },
     contact: { url: "/pages/forms/contact.html", name: "contact" },
 };

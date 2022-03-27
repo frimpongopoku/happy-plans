@@ -8,8 +8,9 @@ export default class FilterBox extends HTMLElement {
         this.render(this);
     }
     render({ pagename, info }) {
-        const filter = info.filter;
-        const content = `
+            const filter = info.filter;
+
+            const content = `
       <div class="filter-area">
           <div class="filter-box">
               <h3 style="color: var(--app-theme-color)">${pagename}</h3>
@@ -17,10 +18,16 @@ export default class FilterBox extends HTMLElement {
                  ${(filter && filter.description) || "..."}
               </p>
               <h3>${(filter && filter.subtext) || "..."}</h3>
-            <app-dropdown version ="v2" options = "${filter && filter.options }" identifier="filter"></app-dropdown>
+            ${
+              !filter.noDropdown
+                ? `<app-dropdown version ="v2" options = "${
+                    filter && filter.options
+                  }" identifier="filter"></app-dropdown>`
+                : ""
+            }
           </div>
       </div>
 `;
-        this.innerHTML = content;
-    }
+    this.innerHTML = content;
+  }
 }
