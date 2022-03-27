@@ -123,4 +123,14 @@
     .space {
         margin-top: 35vh;
     }
+    .title-cover {
+        padding: 0px 10%;
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+    }
+    .right-img {
+        margin-left: auto;
+        margin-right: 15px;
+    }
 }
