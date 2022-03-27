@@ -1,15 +1,18 @@
 import {
     arrangeInOrder,
+    fetchHotels,
+    handleOnTravelDropdownChange,
     makeUniversities,
     mountEducationPage,
     selectCountryOnNav,
+    setTravelPageDescription,
 } from "../functions.js";
 import { capitalise } from "../utils/utils.js";
 
 export const COUNTRIES = {
-    mauritius: { name: "mauritius", key: "mauritius" },
-    ghana: { key: "ghana", name: "ghana" },
-    uk: { key: "uk", name: "United Kingdom" },
+    mauritius: { name: "mauritius", key: "mauritius", city: "portlouis" },
+    ghana: { key: "ghana", name: "ghana", city: "accra" },
+    uk: { key: "uk", name: "United Kingdom", city: "london" },
 };
 
 const common = {
@@ -46,10 +49,27 @@ export const PAGES = {
         url: "/pages/travel/travel.html",
         ...common,
         name: "travel",
+        api: {
+            hotel: {
+                url: ({ country, city }) =>
+                    `https://best-booking-com-hotel.p.rapidapi.com/booking/best-accommodation?countryName=${country}&cityName=${city}`,
+            },
+            weather: {
+                url: ({ country }) =>
+                    `http://api.weatherapi.com/v1/current.json?key=8c01803115044225929184101222503&aqi=no&q=${country}`,
+            },
+        },
         filter: {
-            description: "For all you travellers, here are some important information on crucial prices in the available countries on the platform",
+            runnable: handleOnTravelDropdownChange,
+            description: "For all you travellers, here are some important information available in the countries you intend to visit",
             subtext: "Select Category",
-            options: "Hotels - hot ,Weather - wea",
+            options: "Best Hotel Accomodation - hot , Weather - wea",
+        },
+        recycler: {
+            runnable: fetchHotels,
+        },
+        mount: {
+            runnable: setTravelPageDescription,
         },
     },
     health: {

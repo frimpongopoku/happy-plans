@@ -4,7 +4,7 @@ const navigate = (page) => {
     const url = PAGES[page].url;
     window.page = PAGES[page];
     if (!url) return;
-    window.location = url;
+    window.location = url + "?country=" + window.country.key;
 };
 
 /**
