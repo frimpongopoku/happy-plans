@@ -19,20 +19,22 @@
         <app-hero></app-hero>
         <div class="chart-area">
             <div style="text-align: center">
-                <h1 class="page-title">
-                    Summary of COVID-19 dynamics in the United Kingdom
-                </h1>
+                <div class="title-cover">
+                    <h1 class="page-title" id="health-page-description">
+                        Summary of COVID-19 Dynamics in UK
+                    </h1>
+                </div>
             </div>
             <br />
             <br />
-
-            <div class="chart-container">
+            <app-recycler></app-recycler>
+            <!-- <div class="chart-container">
                 <div style="margin-bottom: 60px">
-                    <canvas id="doughnut" width="400" height="400"></canvas>
+                    <canvas id="pie-chart" width="400" height="400"></canvas>
                 </div>
 
-                <div><canvas id="myChart" width="400" height="400"></canvas></div>
-            </div>
+                <div><canvas id="bar-chart" width="400" height="400"></canvas></div>
+            </div> -->
         </div>
     </section>
     <section style="height: 380px"></section>

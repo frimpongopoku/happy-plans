@@ -92,10 +92,11 @@ export const mountEducationPage = () => {
 /**
  * The function is used inside the data object (data.js)
  */
-export const setTravelPageDescription = (text) => {
-    const title = getElement("#travel-page-description");
+export const setPageDescription = (text) => {
+    const title = getElement(`#${window.pageInfo.name}-page-description`);
     title.innerHTML =
-        text || "The best hotel accomodation in " + capitalise(window.country.name);
+        (text || "The best hotel accomodation in ") +
+        capitalise(window.country.name);
 };
 
 /**
@@ -172,10 +173,10 @@ export const fetchHotels = () => {
 };
 
 /**
- * A reusable function that creates an HTML markup given a weather object from the api, and 
- * attaches it to the DOM.  
+ * A reusable function that creates an HTML markup given a weather object from the api, and
+ * attaches it to the DOM.
  * It also stashes a copy of the data it just used in the window object for later use
- * @param {*} weather 
+ * @param {*} weather
  */
 const makeWeatherTemplateAndAttach = (weather) => {
     const { location, current } = weather;
@@ -246,7 +247,7 @@ export const handleOnTravelDropdownChange = (key) => {
         return fetchHotels();
     }
     if (key === "wea") {
-        setTravelPageDescription(
+        setPageDescription(
             "What's the weather like in " + window.country.name + "?" || "..."
         );
         const weatherInfoStash = temp.weather;
@@ -255,3 +256,9 @@ export const handleOnTravelDropdownChange = (key) => {
         return fetchWeather();
     }
 };
+
+
+export const loadHealthInformation = () => {
+
+
+}

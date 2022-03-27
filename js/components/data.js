@@ -2,10 +2,11 @@ import {
     arrangeInOrder,
     fetchHotels,
     handleOnTravelDropdownChange,
+    loadHealthInformation,
     makeUniversities,
     mountEducationPage,
     selectCountryOnNav,
-    setTravelPageDescription,
+    setPageDescription,
 } from "../functions.js";
 import { capitalise } from "../utils/utils.js";
 
@@ -69,7 +70,7 @@ export const PAGES = {
             runnable: fetchHotels,
         },
         mount: {
-            runnable: setTravelPageDescription,
+            runnable: setPageDescription,
         },
     },
     health: {
@@ -83,6 +84,11 @@ export const PAGES = {
                 .map((name, val) => capitalise(name) + "-" + val.key)
                 .join(","),
         },
+        mount: {
+            runnable: () => setPageDescription("Summary of COVID-19 Dynamics in "),
+        },
+
+        recycler: { runnable: loadHealthInformation }
     },
     contact: { url: "/pages/forms/contact.html", name: "contact" },
 };
