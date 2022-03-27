@@ -87,14 +87,14 @@ export const PAGES = {
             description: "We provide available statistics on COVID-19 activities in various countries",
             subtext: "Always remember to wear your mask",
             noDropdown: true,
-            options: Object.keys(COUNTRIES)
-                .map((name, val) => capitalise(name) + "-" + val.key)
-                .join(","),
+
         },
         mount: {
             runnable: () => setPageDescription("Summary of COVID-19 Dynamics in "),
         },
         recycler: { runnable: loadHealthInformation },
     },
+    business: { url: "/pages/business/business.html", name: "business" },
+    personal: { url: "/pages/personal/personal.html", name: "personal" },
     contact: { url: "/pages/forms/contact.html", name: "contact" },
 };
