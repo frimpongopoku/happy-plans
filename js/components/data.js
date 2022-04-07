@@ -10,17 +10,31 @@ import {
     setPageDescription,
 } from "../functions.js";
 
+/**
+ * Available countries that is supported in the entire application. 
+ * Support for new countries could by implemented by simply adding new country objects with 
+ * following the same object structure
+ */
 export const COUNTRIES = {
     mauritius: { name: "mauritius", key: "mauritius", city: "portlouis" },
     ghana: { key: "ghana", name: "ghana", city: "accra" },
     uk: { key: "uk", name: "United Kingdom", city: "london" },
 };
 
+/**
+ * Pages share similar properties and functions. This object houses all these common properties  
+ * and spread on to each page object  in the main page object. 
+ * It reduces repeatition and makes refactoring easy
+ */
 const common = {
     navigation: {
         runnable: selectCountryOnNav,
     },
 };
+/**
+ * This object represents all each page in the application. 
+ * It defines properties and functionalities that each page should have. 
+ */
 export const PAGES = {
     home: { url: "/index.html", name: "home" },
     education: {
@@ -93,10 +107,7 @@ export const PAGES = {
         },
         recycler: { runnable: loadHealthInformation },
     },
-    entertainment: {
-        url: "/pages/entertainment/entertainment.html",
-        name: "entertainment",
-    },
+
     personal: {
         url: "/pages/personal/personal.html",
         ...common,

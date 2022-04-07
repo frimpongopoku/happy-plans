@@ -1,5 +1,13 @@
 import { getElement } from "../utils/utils.js";
 import { COUNTRIES, PAGES } from "./data.js";
+
+/**
+ * A simple function that is called whenever a dropdown item on 
+ * the navbar is clicked. 
+ * It navigates the site to the current url, but with the currently selected country. 
+ * @param {*} page 
+ * @returns 
+ */
 const navigate = (page) => {
     const url = PAGES[page].url;
     window.page = PAGES[page];
@@ -8,7 +16,11 @@ const navigate = (page) => {
 };
 
 /**
- * A dynamic re-usable navbar component
+ * The navbar component is used on every page. 
+ * Based on the properties passed to it on each page, is able to switch between 
+ * a full length display for desktop devices, and a small-sized burgered display for mobile mode
+ * It displays navigation items based on the pages available on the "pages" object, and 
+ * also displays a country dropdown menu which is also created by looping over the country object.
  */
 export default class NavBarComponent extends HTMLElement {
     constructor() {

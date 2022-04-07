@@ -1,3 +1,9 @@
+/**
+ * This hero component is a design widget that is present on eachpage. 
+ * It displays images, page title, and subtitle based on the properties 
+ * defined on the individual page object
+ */
+
 export default class Hero extends HTMLElement {
     constructor() {
         super();

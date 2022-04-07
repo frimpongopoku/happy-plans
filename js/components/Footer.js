@@ -1,3 +1,7 @@
+/**
+ * Simply a resusable footer that is used 
+ * on very page. No special featured properties yet.
+ */
 export default class Footer extends HTMLElement {
     constructor() {
         super();

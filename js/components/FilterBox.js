@@ -1,3 +1,8 @@
+/**
+ * This component is the floating card that appears on most pages. It is what contains the filter dropdown options.
+ *  When included on a page, it directly accesses the page object 
+ * and uses the filter object to determine the properties it should should show.
+ */
 export default class FilterBox extends HTMLElement {
     constructor() {
         super();

@@ -1,10 +1,18 @@
 import { onDropdownClick } from "../functions.js";
 import { getElement } from "../utils/utils.js";
 
+/**
+ * The dropdown component is a custom html component that 
+ * expects options, which it displays as dropdown elements. It expects the "options" 
+ * parameter as a string separated by ",". 
+ * The dropdown also has two styles. The "version" property is what is used to determine 
+ * which style the dropdown should take.
+ * 
+ */
 export default class Dropdown extends HTMLElement {
     constructor() {
         super();
-        this.options = "Ranking, Date of Establishment, Student Population";
+        this.options = "Ranking, Date of Establishment, Student Population"; // Just default dropdown list until the options dropdown is passed as props when a page loads
         this.defaultvalue = "";
         this.render(this);
     }

@@ -7,6 +7,13 @@ const mountRecycler = () => {
     if (functionToRun) functionToRun({ page });
 }
 
+/**
+ * The recycler is a component that simply switches display to a loading spinner, 
+ * or a markup provided. 
+ * This is handling by triggering the "loading" property and setting it to true or false. 
+ * When the loading property of this component is true, a spinner is rendered. 
+ * When the loading property is false, it renders it's given markup. 
+ */
 export default class Recycler extends HTMLElement {
     constructor() {
         super();
