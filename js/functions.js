@@ -258,6 +258,11 @@ export const handleOnTravelDropdownChange = (key) => {
     }
 };
 
+/**
+ * Give health information from the api request, 
+ * This function is able to create charts with Chart.js and attaches them to the DOM
+ * @param {*} info 
+ */
 const makeGraphsAndAttach = (info) => {
     const recycler = getElement("#health-recycler");
     const markup = `
@@ -278,6 +283,12 @@ const makeGraphsAndAttach = (info) => {
     new Chart(pie, generatePieChartData(response));
     new Chart(bar, generateBarGraphData(response));
 };
+
+/**
+ * Retrieves current page data and uses it to fetch health information 
+ * related to the current page. And passes the response on to a function 
+ * that creates graph data
+ */
 export const loadHealthInformation = () => {
     const country = window.country || {};
     const page = window.pageInfo;
@@ -293,3 +304,53 @@ export const loadHealthInformation = () => {
         })
         .catch((e) => console.log("FETCH_ERROR:", e.toString()));
 };
+
+/**
+ * Given a set of users from api, it translates the user objects in the array into HTML markup 
+ * which is passed on to the recycler, for it to render
+ * @param {*} people 
+ */
+const makePeopleAndAttach = (people) => {
+    const recycler = getElement("#personal-recycler")
+    const markup = (people || []).map(person => {
+        const { name, picture, email } = person;
+
+        return ` 
+    <div class="lean-card elevate-float">
+        <div style="display: flex; flex-direction: row;align-items: center;">
+            <img src="${picture.large}" class="person" alt="person" />
+            <div class="left">
+                <h1 style="font-weight: 400">
+                    ${name.title || "..."}   ${name.first || "..."} ${name.last || "..."}
+                </h1>
+                <h3 style="margin-top: 6px; color: var(--app-theme-green)">
+                     <span class="rating-number">${email || "..."}</span>
+                </h3>
+            </div>
+        </div>
+        <div class="right flex touchable-opacity" onclick=\ "window.open('mailto:${email}','_blank')\">
+            <em class="fa fa-angle-right right-angle"></em>
+        </div>
+    </div>
+    `
+
+    })
+
+    recycler.setAttribute("markup", markup);
+    recycler.setAttribute("loading", "false");
+}
+
+/**
+ * Runs an api request to fetch a set of users 
+ */
+export const fetchPeopleForHire = () => {
+    const country = window.country || {};
+    const page = window.pageInfo;
+    const url = page.api.people.url({
+        country: country.key,
+    });
+    InternetExplorer.get({ url }).then(response => {
+        makePeopleAndAttach(response.results || [])
+    })
+
+}

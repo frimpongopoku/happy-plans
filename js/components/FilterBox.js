@@ -9,7 +9,7 @@ export default class FilterBox extends HTMLElement {
     }
     render({ pagename, info }) {
             const filter = info.filter;
-
+            if (!filter) return;
             const content = `
       <div class="filter-area">
           <div class="filter-box">

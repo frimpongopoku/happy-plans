@@ -144,4 +144,9 @@
     .space {
         margin-top: 15vh;
     }
+    .person {
+        height: 150px;
+        width: 160px;
+        object-fit: cover;
+    }
 }

@@ -1,6 +1,7 @@
 import {
     arrangeInOrder,
     fetchHotels,
+    fetchPeopleForHire,
     handleOnTravelDropdownChange,
     loadHealthInformation,
     makeUniversities,
@@ -8,7 +9,6 @@ import {
     selectCountryOnNav,
     setPageDescription,
 } from "../functions.js";
-import { capitalise } from "../utils/utils.js";
 
 export const COUNTRIES = {
     mauritius: { name: "mauritius", key: "mauritius", city: "portlouis" },
@@ -87,14 +87,33 @@ export const PAGES = {
             description: "We provide available statistics on COVID-19 activities in various countries",
             subtext: "Always remember to wear your mask",
             noDropdown: true,
-
         },
         mount: {
             runnable: () => setPageDescription("Summary of COVID-19 Dynamics in "),
         },
         recycler: { runnable: loadHealthInformation },
     },
-    business: { url: "/pages/business/business.html", name: "business" },
-    personal: { url: "/pages/personal/personal.html", name: "personal" },
-    contact: { url: "/pages/forms/contact.html", name: "contact" },
+    entertainment: {
+        url: "/pages/entertainment/entertainment.html",
+        name: "entertainment",
+    },
+    personal: {
+        url: "/pages/personal/personal.html",
+        ...common,
+        name: "personal",
+        mount: {
+            runnable: () =>
+                setPageDescription(
+                    "Here is a list of personal assistants you can hire in "
+                ),
+        },
+        api: {
+            people: {
+                url: ({ country }) =>
+                    `https://randomuser.me/api/?seed=${country}&results=20`,
+            },
+        },
+        recycler: { runnable: fetchPeopleForHire },
+    },
+    contact: { url: "/pages/forms/contact.html", ...common, name: "contact" },
 };
