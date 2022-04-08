@@ -36,7 +36,7 @@ const common = {
  * It defines properties and functionalities that each page should have. 
  */
 export const PAGES = {
-    home: { url: "/index.html", name: "home" },
+    home: { url: "/happy-plans/index.html", name: "home" },
     education: {
         url: "/happy-plans/pages/education/education.html",
         name: "education",
