@@ -16,7 +16,7 @@ export default class FilterBox extends HTMLElement {
             const filter = info.filter;
             if (!filter) return;
             const content = `
-      <div class="filter-area">
+      <div class="filter-area scale-in">
           <div class="filter-box">
               <h3 style="color: var(--app-theme-color)">${pagename}</h3>
               <p>

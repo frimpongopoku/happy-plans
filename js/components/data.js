@@ -16,9 +16,9 @@ import {
  * following the same object structure
  */
 export const COUNTRIES = {
-    mauritius: { name: "mauritius", key: "mauritius", city: "portlouis" },
-    ghana: { key: "ghana", name: "ghana", city: "accra" },
-    uk: { key: "uk", name: "United Kingdom", city: "london" },
+    mauritius: { name: "mauritius", key: "mauritius", city: "portlouis", background: "./../../shared/media/mu-hero-back.jpeg", },
+    ghana: { key: "ghana", name: "ghana", city: "accra", background: "./../../shared/media/gh-hero-back.jpeg" },
+    uk: { key: "uk", name: "United Kingdom", city: "london", background: "./../../shared/media/uk-hero-back.jpeg" },
 };
 
 /**

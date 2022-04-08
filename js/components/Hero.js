@@ -4,15 +4,19 @@
  * defined on the individual page object
  */
 
+import { capitalise } from "../utils/utils.js";
+
 export default class Hero extends HTMLElement {
     constructor() {
+
         super();
         // Set default values of  the hero component before the real attributes load
-        this.title = "Welcome to this page";
+        const country = window.country;
+        this.title = (country.name && "Welcome to " + capitalise(country.name)) || "Welcome to this page"; // append the country name to a string and show as the title of the hero card on each page
         this.showbtn = true;
-
+        this.background = country.background || "./../../shared/media/uk-hero-back.jpeg" // set the background of the hero card based on the country
         this.subtext =
-            "We provide information on various topics, enjoy your time here.";
+            country.subttext || "We provide information on various topics, enjoy your time here.";
         this.render({...this });
     }
 
@@ -32,14 +36,14 @@ export default class Hero extends HTMLElement {
         this.render(this); // re-render the component when an attribute changes
     }
 
-    render({ showbtn, title, subtext }) {
+    render({ showbtn, title, subtext, background }) {
             const button = `<button class="hero-button touchable-opacity" onclick="window.location='/pages/forms/contact.html'">
         Contact Us <em class="fa fa-long-arrow-right"></em>
       </button>`;
             const content = `
     <div class="hero">
       <div class="content">
-          <img class="hero-image" src="./../../shared/media/uk-hero-back.jpeg" alt="hero image" />
+          <img class="hero-image" src="${background}" alt="hero image" />
       </div>
       <div class="hero-overlay"></div>
       <div class="hero-body">

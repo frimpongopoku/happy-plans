@@ -48,7 +48,7 @@ const createDOMElementsFromUniversities = (data) => {
         .map((uni) => {
             const link = uni.web_pages[0];
             return `
-          <div class="lean-card elevate-float">
+          <div class="lean-card elevate-float scale-in">
               <div class="left">
                   <h1 style="font-weight: 400;">${uni.name}</h1>
               </div>
@@ -129,7 +129,7 @@ export const selectCountryOnNav = (countryKey) => {
 const makeHotelTemplateAndAttach = (hotel) => {
     const { name, rating, link } = hotel;
     const markup = `
-    <div class="lean-card elevate-float">
+    <div class="lean-card elevate-float scale-in">
         <div class="left">
             <h1 style="font-weight: 400">
                 ${name || "..."}
@@ -316,7 +316,7 @@ const makePeopleAndAttach = (people) => {
         const { name, picture, email } = person;
 
         return ` 
-    <div class="lean-card elevate-float">
+    <div class="lean-card elevate-float scale-in">
         <div style="display: flex; flex-direction: row;align-items: center;">
             <img src="${picture.large}" class="person" alt="person" />
             <div class="left">
