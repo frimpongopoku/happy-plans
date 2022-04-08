@@ -306,25 +306,43 @@ export const loadHealthInformation = () => {
 };
 
 /**
- * Given a set of users from api, it translates the user objects in the array into HTML markup 
- * which is passed on to the recycler, for it to render
- * @param {*} people 
+ * This function returns a versions of any given string that has been shortened 
+ * based on a set character limit
+ * @param {*} string 
+ * @param {*} limit 
+ * @returns 
  */
+const smartString = (string, limit = 20) => {
+        if (!string) return "";
+
+        return string.slice(0, limit) + "..."
+    }
+    /**
+     * Given a set of users from api, it translates the user objects in the array into HTML markup 
+     * which is passed on to the recycler, for it to render
+     * @param {*} people 
+     */
 const makePeopleAndAttach = (people) => {
     const recycler = getElement("#personal-recycler")
     const markup = (people || []).map(person => {
         const { name, picture, email } = person;
+        var fullName = `${name.title || "..."}   ${name.first || "..."} ${name.last || "..."}`
+
 
         return ` 
     <div class="lean-card elevate-float scale-in">
         <div style="display: flex; flex-direction: row;align-items: center;">
             <img src="${picture.large}" class="person" alt="person" />
             <div class="left">
-                <h1 style="font-weight: 400">
-                    ${name.title || "..."}   ${name.first || "..."} ${name.last || "..."}
+                <h1 style="font-weight: 400" class="pc-vanish">
+                    ${smartString(fullName, 12)}
+                </h1>
+                <h1 style="font-weight: 400" class="phone-vanish">
+                    ${fullName}
                 </h1>
                 <h3 style="margin-top: 6px; color: var(--app-theme-green)">
-                     <span class="rating-number">${email || "..."}</span>
+                     <span class="rating-number pc-vanish">${smartString(email,12) || "..."}</span>
+                     <span class="rating-number phone-vanish">${email || "..."}</span>
                 </h3>
             </div>
         </div>
@@ -334,7 +352,7 @@ const makePeopleAndAttach = (people) => {
     </div>
     `
 
-    })
+    }).join("")
 
     recycler.setAttribute("markup", markup);
     recycler.setAttribute("loading", "false");
