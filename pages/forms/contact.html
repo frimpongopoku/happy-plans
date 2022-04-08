@@ -24,19 +24,19 @@
         </div>
         <br class="phone-vanish" />
         <br />
-        <form class="form elevate-hover scale-in">
+        <form class="form elevate-hover scale-in" method="POST" action="/happy-plans/api/custom/message.php">
             <h2 style="color: var(--app-theme-color); font-weight: 300">
                 Please use the form below to send us a message
             </h2>
             <br />
             <label>Email</label>
-            <input type="text" required class="textbox" placeholder="Enter your email..." />
+            <input type="email" required class="textbox" name="email" placeholder="Enter your email..." />
             <br />
             <label>Subject</label>
-            <input type="text" required class="textbox" placeholder="Enter a subject..." />
+            <input type="text" required class="textbox" name="subject" placeholder="Enter a subject..." />
             <br />
             <label>Message</label>
-            <textarea type="text" required class="textbox" placeholder="Enter your message" rows="8"></textarea>
+            <textarea type="text" required class="textbox" name="message" placeholder="Enter your message" rows="8"></textarea>
             <div class="flex" style="padding: 10px">
                 <button class="custom-btn touchable-opacity" style="margin-left: auto; background-color: green; color: white">
             Send Message

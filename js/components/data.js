@@ -18,7 +18,7 @@ import {
 export const COUNTRIES = {
     mauritius: { name: "mauritius", key: "mauritius", city: "portlouis", background: "./../../shared/media/mu-hero-back.jpeg", },
     ghana: { key: "ghana", name: "ghana", city: "accra", background: "./../../shared/media/gh-hero-back.jpeg" },
-    uk: { key: "uk", name: "United Kingdom", city: "london", background: "./../../shared/media/uk-hero-back.jpeg" },
+    uk: { key: "uk", name: "United Kingdom", city: "london", background: "./../../shared/media/uk-hero-back.jpeg", text: " the UK" },
 };
 
 /**
@@ -38,7 +38,7 @@ const common = {
 export const PAGES = {
     home: { url: "/index.html", name: "home" },
     education: {
-        url: "/pages/education/education.html",
+        url: "/happy-plans/pages/education/education.html",
         name: "education",
         ...common,
         api: {
@@ -61,7 +61,7 @@ export const PAGES = {
         },
     },
     travel: {
-        url: "/pages/travel/travel.html",
+        url: "/happy-plans/pages/travel/travel.html",
         ...common,
         name: "travel",
         api: {
@@ -88,7 +88,7 @@ export const PAGES = {
         },
     },
     health: {
-        url: "/pages/health/health.html",
+        url: "/happy-plans/pages/health/health.html",
         ...common,
         name: "health",
         api: {
@@ -109,7 +109,7 @@ export const PAGES = {
     },
 
     personal: {
-        url: "/pages/personal/personal.html",
+        url: "/happy-plans/pages/personal/personal.html",
         ...common,
         name: "personal",
         mount: {
@@ -126,5 +126,5 @@ export const PAGES = {
         },
         recycler: { runnable: fetchPeopleForHire },
     },
-    contact: { url: "/pages/forms/contact.html", ...common, name: "contact" },
+    contact: { url: "/happy-plans/pages/forms/contact.html", ...common, name: "contact" },
 };
